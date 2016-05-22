@@ -1,10 +1,6 @@
 # organic-helper
 organic chemistry helper for remembering basics or orgo
 
-
-#Version
-1.0.2
-
 #Goals
 make it easier to have a reference for intro orgo classes
 

@@ -1,0 +1,14 @@
+{
+  "name": "organic-helper",
+  "version": "1.X.X",
+  "description": "organic chemistry reference tool",
+  "dependencies": {
+    "bootstrap": "~3",
+    "angular": "~1.5.5",
+    "angular-ui-utils": "~0.1.1",
+    "angular-ui-router": "~0.2.11",
+    "d3": "~3.5.5",
+    "parallax": "~2.1.3",
+    "fontawesome": "~4.5.0"
+  }
+}
