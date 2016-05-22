@@ -23,6 +23,13 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('search', {
+            url: '/search',
+            views: {
+                '': { templateUrl: '../views/search.html' },
+            }
+        })
+
         /*
         Organic Reaction Pages
         */
