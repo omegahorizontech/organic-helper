@@ -1,19 +1,19 @@
 // NOTE: ohApp is defined in app.js
-ohApp.directive("functionalGroupContainerDirective", function() {
+ohApp.directive("functionalGroupDirective", function() {
     return {
         restrict : 'E',
         templateUrl : 'js/templates/functional-group-container.html',
         scope: {
-          title: "@",
+          name: "@",
+          displayname: "@",
         },
         link: function(scope, element, attrs) {
 
-          scope.title = attrs.title;
+          scope.name = attrs.name;
+          scope.displayname = attrs.displayname;
 
-          scope.$watch('title', function(nV, oV) {
+          scope.$watch('name', function(nV, oV) {
             if(nV){
-
-              console.log('hey')
 
               var width = 460,
                   height = 500;
@@ -32,7 +32,10 @@ ohApp.directive("functionalGroupContainerDirective", function() {
                   .charge(-400)
                   .linkDistance(function(d) { return radius(d.source.size) + radius(d.target.size) + 20; });
 
-              d3.json("../../json/graph.json", function(error, graph) {
+              var jsonPath = "json/" + attrs.name + ".json";
+              console.log('loading---->  ' + jsonPath);
+
+              d3.json(jsonPath, function(error, graph) {
                 if (error) throw error;
 
                 force
