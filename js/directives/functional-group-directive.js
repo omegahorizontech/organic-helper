@@ -6,11 +6,13 @@ ohApp.directive("functionalGroupDirective", function() {
         scope: {
           name: "@",
           displayname: "@",
+          atomicname: "@",
         },
         link: function(scope, element, attrs) {
 
           scope.name = attrs.name;
           scope.displayname = attrs.displayname;
+          scope.atomicname = attrs.atomicname;
 
           scope.$watch('name', function(nV, oV) {
             if(nV){
@@ -30,7 +32,7 @@ ohApp.directive("functionalGroupDirective", function() {
               svg.append("text")
                   .attr("x", '30px')
                   .attr("y", '40px')
-                  .text(attrs.atomicName);
+                  .text(attrs.atomicname);
 
               var force = d3.layout.force()
                   .size([width, height])
