@@ -32,7 +32,6 @@ ohApp.directive("functionalGroupDirective", function() {
               svg.append("text")
                   .attr("x", '30px')
                   .attr("y", '40px')
-                  .style("stroke-width", '5px')
                   .text('Formula');
 
               svg.append("text")
