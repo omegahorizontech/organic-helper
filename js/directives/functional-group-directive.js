@@ -26,18 +26,22 @@ ohApp.directive("functionalGroupDirective", function() {
                   .range([0, 6]);
 
               var svg = d3.select(".viz").append("svg")
+                  .style("border", "1px solid black")
                   .attr("width", width)
                   .attr("height", height);
 
               svg.append("text")
-                  .attr("x", '30px')
-                  .attr("y", '40px')
-                  .text('Formula');
+                  .attr("x", width - 35 + 'px')
+                  .attr("y", '60px')
+                  .style("font-weight", 900)
+                  .attr("text-anchor", "end")
+                  .text(attrs.atomicname);
 
               svg.append("text")
-                  .attr("x", '90px')
+                  .attr("x", width - 35 + 'px')
                   .attr("y", '40px')
-                  .text(attrs.atomicname);
+                  .attr("text-anchor", "end")
+                  .text('The formula is usually written');
 
               var force = d3.layout.force()
                   .size([width, height])
