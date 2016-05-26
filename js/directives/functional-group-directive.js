@@ -27,6 +27,11 @@ ohApp.directive("functionalGroupDirective", function() {
                   .attr("width", width)
                   .attr("height", height);
 
+              svg.append("text")
+                  .attr("x", '30px')
+                  .attr("y", '40px')
+                  .text(attrs.atomicName);
+
               var force = d3.layout.force()
                   .size([width, height])
                   .charge(-400)
