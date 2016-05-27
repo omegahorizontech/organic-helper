@@ -104,7 +104,7 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         })
 
         /*
-        Functional Groups Pages
+        Simple Functional Groups Pages
         */
         .state('acidAnhydride', {
             url: '/acidAnhydride',
@@ -117,13 +117,6 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/acylChloride',
             views: {
                 '': { templateUrl: '../views/acylChloride.html' },
-            }
-        })
-
-        .state('alcohol', {
-            url: '/alcohol',
-            views: {
-                '': { templateUrl: '../views/alcohol.html' },
             }
         })
 
@@ -211,6 +204,22 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        /*
+        Complex Functional Groups Pages
+        */
+        .state('alcohol', {
+            url: '/alcohol',
+            views: {
+                '': { templateUrl: '../views/alcohol.html' },
+            }
+        })
+        
+        .state('phenol', {
+            url: '/phenol',
+            views: {
+                '': { templateUrl: '../views/phenol.html' },
+            }
+        })
 
 
 
