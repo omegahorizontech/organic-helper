@@ -1,0 +1,25 @@
+{
+  "name": "organic-helper",
+  "version": "1.1.7",
+  "description": "organic chemistry reference",
+  "author": "Nathaniel Buechler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nbuechler/organic-helper/issues"
+  },
+  "homepage": "https://github.com/nbuechler/organic-helper#readme",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbuechler/organic-helper.git"
+  },
+  "keywords": [
+    "angular",
+    "d3"
+  ],
+  "dependencies": {
+    "bower": "~1.3.8"
+  }
+}

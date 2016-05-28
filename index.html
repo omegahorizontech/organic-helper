@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  	<title>Organic Helper</title>
+    <!-- General META -->
+  	<meta charset="utf-8">
+  	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!--Application CSS Files-->
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+    <link type="text/css" rel="stylesheet" href="lib/bootswatch-theme/bootstrap.min.css"></link>
+
+    <link type="text/css" rel="stylesheet" href="css/default.css"></link>
+
+  	<!-- Google Font -->
+  	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+
+
+    <!-- Custom styles for this template -->
+    <link type="text/css" rel="stylesheet" href="css/navbar-fixed-top.css" >
+
+  </head>
+  <body ng-app="ohApp">
+
+    <!-- Fixed navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Organic Helper</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reactions <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a ui-sref="acylation">Acylation</a></li>
+                  <li><a ui-sref="addition">Addition</a></li>
+                  <li><a ui-sref="cracking">Cracking</a></li>
+                  <li><a ui-sref="elimination">Elimination</a></li>
+                  <li><a ui-sref="esterification">Esterification</a></li>
+                  <li><a ui-sref="hydrolysis">Hydrolysis</a></li>
+                  <li><a ui-sref="oxidation">Oxidation</a></li>
+                  <li><a ui-sref="polymerisation">Polymerisation</a></li>
+                  <li><a ui-sref="reduction">Reduction</a></li>
+                  <li><a ui-sref="substitution">Substitution</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Simple Functional Groups <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a ui-sref="acidAnhydride">Acid Anhydride</a></li>
+                  <li><a ui-sref="acylChloride">Acyl Chloride</a></li>
+                  <li><a ui-sref="aldehyde">Aldehyde</a></li>
+                  <li><a ui-sref="alkane">Alkane</a></li>
+                  <li><a ui-sref="alkene">Alkene</a></li>
+                  <li><a ui-sref="amine">Amine</a></li>
+                  <li><a ui-sref="amide">Amide</a></li>
+                  <li><a ui-sref="carboxylicAcid">Carboxylic Acid</a></li>
+                  <li><a ui-sref="epoxide">Epoxide</a></li>
+                  <li><a ui-sref="ester">Ester</a></li>
+                  <li><a ui-sref="ether">Ether</a></li>
+                  <li><a ui-sref="haloalkane">Haloalkane</a></li>
+                  <li><a ui-sref="ketone">Ketone</a></li>
+                  <li><a ui-sref="nitrile">Nitrile</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Complex Functional Groups <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a ui-sref="alcohol">Alcohol</a></li>
+                  <li><a ui-sref="phenol">Phenol</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="about">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+      <div class="mainContent">
+
+  				<!-- INJECTED CONTENT -->
+  		    <div class="container" ui-view></div>
+
+          <hr>
+
+          <div class="container well" style="margin-bottom: 100px">
+            <footer>
+              <p style="text-align: center;">GPLv3 . OmegaHorizonResearch . 2016</p>
+              <p style="text-align: center;">
+                <a style="color: #222;" href="https://github.com/OmegaHorizonResearch/organic-helper">Fork Us</a>
+              </p>
+            </footer>
+          </div> <!-- /container -->
+  		</div>
+
+  </body>
+
+  <!--More application JavaScript Files-->
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!--Main Application JavaScript Files-->
+	<script type="text/javascript" src="bower_components/parallax/deploy/parallax.js"></script>
+  <script type="text/javascript" src="bower_components/d3/d3.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-utils/ui-utils.js"></script>
+
+	<!-- THE app.js file -->
+	<script type="text/javascript" src="js/app.js"></script>
+
+  <!-- Directives -->
+	<script type="text/javascript" src="js/directives/functional-group-directive.js"></script>
+
+</html>
