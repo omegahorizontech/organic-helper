@@ -12,21 +12,21 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         .state('home', {
             url: '/home',
             views: {
-                '': { templateUrl: '../views/home.html' },
+                '': { templateUrl: root + '/views/home.html' },
             }
         })
 
         .state('about', {
             url: '/about',
             views: {
-                '': { templateUrl: '../views/about.html' },
+                '': { templateUrl: root + '/views/about.html' },
             }
         })
 
         .state('search', {
             url: '/search',
             views: {
-                '': { templateUrl: '../views/search.html' },
+                '': { templateUrl: root + '/views/search.html' },
             }
         })
 
@@ -36,70 +36,70 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         .state('acylation', {
             url: '/acylation',
             views: {
-                '': { templateUrl: '../views/acylation.html' },
+                '': { templateUrl: root + '/views/acylation.html' },
             }
         })
 
         .state('addition', {
             url: '/addition',
             views: {
-                '': { templateUrl: '../views/addition.html' },
+                '': { templateUrl: root + '/views/addition.html' },
             }
         })
 
         .state('cracking', {
             url: '/cracking',
             views: {
-                '': { templateUrl: '../views/cracking.html' },
+                '': { templateUrl: root + '/views/cracking.html' },
             }
         })
 
         .state('elimination', {
             url: '/elimination',
             views: {
-                '': { templateUrl: '../views/elimination.html' },
+                '': { templateUrl: root + '/views/elimination.html' },
             }
         })
 
         .state('esterification', {
             url: '/esterification',
             views: {
-                '': { templateUrl: '../views/esterification.html' },
+                '': { templateUrl: root + '/views/esterification.html' },
             }
         })
 
         .state('hydrolysis', {
             url: '/hydrolysis',
             views: {
-                '': { templateUrl: '../views/hydrolysis.html' },
+                '': { templateUrl: root + '/views/hydrolysis.html' },
             }
         })
 
         .state('oxidation', {
             url: '/oxidation',
             views: {
-                '': { templateUrl: '../views/oxidation.html' },
+                '': { templateUrl: root + '/views/oxidation.html' },
             }
         })
 
         .state('polymerisation', {
             url: '/polymerisation',
             views: {
-                '': { templateUrl: '../views/polymerisation.html' },
+                '': { templateUrl: root + '/views/polymerisation.html' },
             }
         })
 
         .state('reduction', {
             url: '/reduction',
             views: {
-                '': { templateUrl: '../views/reduction.html' },
+                '': { templateUrl: root + '/views/reduction.html' },
             }
         })
 
         .state('substitution', {
             url: '/substitution',
             views: {
-                '': { templateUrl: '../views/substitution.html' },
+                '': { templateUrl: root + '/views/substitution.html' },
             }
         })
 
@@ -109,98 +109,98 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         .state('acidAnhydride', {
             url: '/acidAnhydride',
             views: {
-                '': { templateUrl: '../views/acidAnhydride.html' },
+                '': { templateUrl: root + '/views/acidAnhydride.html' },
             }
         })
 
         .state('acylChloride', {
             url: '/acylChloride',
             views: {
-                '': { templateUrl: '../views/acylChloride.html' },
+                '': { templateUrl: root + '/views/acylChloride.html' },
             }
         })
 
         .state('aldehyde', {
             url: '/aldehyde',
             views: {
-                '': { templateUrl: '../views/aldehyde.html' },
+                '': { templateUrl: root + '/views/aldehyde.html' },
             }
         })
 
         .state('alkane', {
             url: '/alkane',
             views: {
-                '': { templateUrl: '../views/alkane.html' },
+                '': { templateUrl: root + '/views/alkane.html' },
             }
         })
 
         .state('alkene', {
             url: '/alkene',
             views: {
-                '': { templateUrl: '../views/alkene.html' },
+                '': { templateUrl: root + '/views/alkene.html' },
             }
         })
 
         .state('amine', {
             url: '/amine',
             views: {
-                '': { templateUrl: '../views/amine.html' },
+                '': { templateUrl: root + '/views/amine.html' },
             }
         })
 
         .state('amide', {
             url: '/amide',
             views: {
-                '': { templateUrl: '../views/amide.html' },
+                '': { templateUrl: root + '/views/amide.html' },
             }
         })
 
         .state('carboxylicAcid', {
             url: '/carboxylicAcid',
             views: {
-                '': { templateUrl: '../views/carboxylicAcid.html' },
+                '': { templateUrl: root + '/views/carboxylicAcid.html' },
             }
         })
 
         .state('epoxide', {
             url: '/epoxide',
             views: {
-                '': { templateUrl: '../views/epoxide.html' },
+                '': { templateUrl: root + '/views/epoxide.html' },
             }
         })
 
         .state('ester', {
             url: '/ester',
             views: {
-                '': { templateUrl: '../views/ester.html' },
+                '': { templateUrl: root + '/views/ester.html' },
             }
         })
 
         .state('ether', {
             url: '/ether',
             views: {
-                '': { templateUrl: '../views/ether.html' },
+                '': { templateUrl: root + '/views/ether.html' },
             }
         })
 
         .state('haloalkane', {
             url: '/haloalkane',
             views: {
-                '': { templateUrl: '../views/haloalkane.html' },
+                '': { templateUrl: root + '/views/haloalkane.html' },
             }
         })
 
         .state('ketone', {
             url: '/ketone',
             views: {
-                '': { templateUrl: '../views/ketone.html' },
+                '': { templateUrl: root + '/views/ketone.html' },
             }
         })
 
         .state('nitrile', {
             url: '/nitrile',
             views: {
-                '': { templateUrl: '../views/nitrile.html' },
+                '': { templateUrl: root + '/views/nitrile.html' },
             }
         })
 
@@ -210,14 +210,14 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         .state('alcohol', {
             url: '/alcohol',
             views: {
-                '': { templateUrl: '../views/alcohol.html' },
+                '': { templateUrl: root + '/views/alcohol.html' },
             }
         })
-        
+
         .state('phenol', {
             url: '/phenol',
             views: {
-                '': { templateUrl: '../views/phenol.html' },
+                '': { templateUrl: root + '/views/phenol.html' },
             }
         })
 
