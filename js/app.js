@@ -106,19 +106,6 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         /*
         Simple Functional Groups Pages
         */
-        .state('acidAnhydride', {
-            url: '/acidAnhydride',
-            views: {
-                '': { templateUrl: root + '/views/acidAnhydride.html' },
-            }
-        })
-
-        .state('acylChloride', {
-            url: '/acylChloride',
-            views: {
-                '': { templateUrl: root + '/views/acylChloride.html' },
-            }
-        })
 
         .state('aldehyde', {
             url: '/aldehyde',
@@ -148,24 +135,10 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-        .state('amide', {
-            url: '/amide',
-            views: {
-                '': { templateUrl: root + '/views/amide.html' },
-            }
-        })
-
         .state('carboxylicAcid', {
             url: '/carboxylicAcid',
             views: {
                 '': { templateUrl: root + '/views/carboxylicAcid.html' },
-            }
-        })
-
-        .state('epoxide', {
-            url: '/epoxide',
-            views: {
-                '': { templateUrl: root + '/views/epoxide.html' },
             }
         })
 
@@ -211,6 +184,34 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/alcohol',
             views: {
                 '': { templateUrl: root + '/views/alcohol.html' },
+            }
+        })
+
+        .state('acidAnhydride', {
+            url: '/acidAnhydride',
+            views: {
+                '': { templateUrl: root + '/views/acidAnhydride.html' },
+            }
+        })
+
+        .state('acylChloride', {
+            url: '/acylChloride',
+            views: {
+                '': { templateUrl: root + '/views/acylChloride.html' },
+            }
+        })
+
+        .state('amide', {
+            url: '/amide',
+            views: {
+                '': { templateUrl: root + '/views/amide.html' },
+            }
+        })
+
+        .state('epoxide', {
+            url: '/epoxide',
+            views: {
+                '': { templateUrl: root + '/views/epoxide.html' },
             }
         })
 
