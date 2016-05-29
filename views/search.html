@@ -1,13 +1,12 @@
 <div class="container">
-
   <div class="row">
     <div class="col-lg-12">
       <div class="well">
-      Search for something
-      <!-- https://docs.angularjs.org/api/ng/filter/filter -->
+      The list below shows the entire list of functional groups within the Organic Helper. Click on one to see the interactive visualization.
       </div>
     </div>
   </div>
+<!--
   <div class="row">
     <div class="col-lg-6 pull-right">
       <div class="input-group">
@@ -16,7 +15,30 @@
           <button class="btn btn-default" type="button">Go!</button>
         </span>
       </div>
-    </div><!-- /input-group -->
+    </div>
+  </div>
+-->
+  <div ng-controller="searchController">
+      <div class="row">
+        <div class="col-lg-6" ng-repeat="group in functionalGroups">
+
+          <a ui-sref="{{group.name}}">
+            <div class="panel panel-default">
+              <div class="panel-heading" style="text-align: center;">
+                <h6>
+                {{group.displayname}}
+                </h6>
+              </div>
+              <div class="panel-body">
+                <div class="well col-lg-12 col-md-12 col-sm-12" style="text-align: center; min-height: 400px">
+                  <search-group-directive name='phenol'></search-group-directive>
+                </div>
+              </div>
+            </div>
+          </a>
+
+      </div>
+    </div>
   </div>
 
 </div> <!-- /container -->
