@@ -3,7 +3,7 @@
     {"atom": "C", "size": 12},
     {"atom": "O", "size": 16},
     {"atom": "R", "size": 15},
-    {"atom": "R", "size": 15}
+    {"atom": "R'", "size": 15}
   ],
   "links": [
     {"source": 0, "target": 1,  "bond": 2},

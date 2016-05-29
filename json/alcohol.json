@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {"atom": "R'", "size": 15},
+    {"atom": "R''", "size": 15},
+    {"atom": "R'''", "size": 15},
+    {"atom": "C", "size": 12},
+    {"atom": "O", "size": 16},
+    {"atom": "H", "size": 1}
+  ],
+  "links": [
+    {"source": 0, "target": 3,  "bond": 1},
+    {"source": 1, "target": 3,  "bond": 1},
+    {"source": 2, "target": 3,  "bond": 1},
+    {"source": 4, "target": 3,  "bond": 1},
+    {"source": 4, "target": 5,  "bond": 1}
+  ]
+}
