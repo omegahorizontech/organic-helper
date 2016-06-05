@@ -20,8 +20,6 @@ ohApp.directive("functionalGroupDirective", function() {
               var width = 460,
                   height = 500;
 
-              var color = d3.scale.category20();
-
               var radius = d3.scale.sqrt()
                   .range([0, 6]);
 
@@ -51,6 +49,52 @@ ohApp.directive("functionalGroupDirective", function() {
               var jsonPath = "json/" + attrs.name + ".json";
               console.log('loading---->  ' + jsonPath);
 
+              function findColor(data) {
+                var color = ''
+                switch (data.atom) {
+                  case 'H':
+                      color = 'white';
+                    break;
+                  case 'O':
+                      color = 'red';
+                    break;
+                  case 'Cl':
+                      color = 'green';
+                    break;
+                  case 'N':
+                      color = 'dodgerBlue';
+                    break;
+                  case 'C':
+                      color = 'grey';
+                    break;
+                  case 'S':
+                      color = 'yellow';
+                    break;
+                  case 'P':
+                      color = 'orange';
+                    break;
+                  case "R":
+                      color = 'maroon';
+                    break;
+                  case "R'":
+                      color = 'maroon';
+                    break;
+                  case "R''":
+                      color = 'maroon';
+                    break;
+                  case "R'''":
+                      color = 'maroon';
+                    break;
+                  case "R''''":
+                      color = 'maroon';
+                    break;
+                  default:
+                      color = 'black';
+                    break;
+                }
+                return color
+              }
+
               d3.json(jsonPath, function(error, graph) {
                 if (error) throw error;
 
@@ -79,7 +123,7 @@ ohApp.directive("functionalGroupDirective", function() {
 
                 node.append("circle")
                     .attr("r", function(d) { return radius(d.size); })
-                    .style("fill", function(d) { return color(d.atom); });
+                    .style("fill", function(d) { return findColor(d); });
 
                 node.append("text")
                     .attr("dy", ".35em")
