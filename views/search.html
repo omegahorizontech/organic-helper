@@ -20,18 +20,18 @@
 
   <div ng-controller="searchController">
       <div class="row">
-        <div class="col-lg-6" ng-repeat="group in functionalGroups | filter:searchText">
+        <div class="col-lg-6" ng-repeat="item in allContent | filter:searchText">
 
-          <a ui-sref="{{group.name}}">
+          <a ui-sref="{{item.name}}">
             <div class="panel panel-default">
               <div class="panel-heading" style="text-align: center;">
                 <h6>
-                {{group.displayname}}
+                {{item.displayname}}
                 </h6>
               </div>
               <div class="panel-body">
-                <div class="well col-lg-12 col-md-12 col-sm-12" style="text-align: center; min-height: 400px">
-                  <search-group-directive name='phenol'></search-group-directive>
+                <div class="well col-lg-12 col-md-12 col-sm-12" style="text-align: center; min-height: 547px">
+                  <search-group-directive></search-group-directive>
                 </div>
               </div>
             </div>
