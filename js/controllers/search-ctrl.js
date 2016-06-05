@@ -2,6 +2,39 @@
 ohApp.controller('searchController', ['$scope', '$http',
     function($scope, $http) {
 
+      /*
+       * Each array gets concated below, and has space seperated meta in some cases.
+       */
+
+      var bonds = [
+        {
+          "name": 'sBond', "displayname": 'σ Bond',
+          "meta": 's s Bond sBond sigma',
+        },
+        {
+          "name": 'pBond', "displayname": 'π Bond',
+          "meta": 'p p Bond pBond pi',
+        },
+        {
+          "name": 'dBond', "displayname": 'δ Bond',
+          "meta": 'd d Bond dBond delta',
+        }
+      ];
+      var orbitals = [
+        {
+          "name": 'sOrbital', "displayname": 's - Orbital',
+          "meta": 's s Orbital sOrbital sigma',
+        },
+        {
+          "name": 'pOrbital', "displayname": 'p - Orbital',
+          "meta": 'p p Orbital pOrbital pi',
+        },
+        {
+          "name": 'dOrbital', "displayname": 'd - Orbital',
+          "meta": 'd d Orbital dOrbital delta',
+        }
+      ];
+
       var functionalGroups = [
         {"name": 'acidAnhydride', "displayname": 'Acid Anhydride'},
         {"name": 'acylChloride', "displayname": 'Acyl Chloride'},
@@ -22,5 +55,14 @@ ohApp.controller('searchController', ['$scope', '$http',
       ];
 
       $scope.functionalGroups = functionalGroups;
+      $scope.bonds = bonds;
+      $scope.orbitals = orbitals;
+
+      var allContent = [];
+      allContent = allContent.concat(functionalGroups);
+      allContent = allContent.concat(bonds);
+      allContent = allContent.concat(orbitals);
+
+      $scope.allContent = allContent;
 
     }]);

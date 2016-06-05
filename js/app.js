@@ -180,6 +180,7 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
         /*
         Complex Functional Groups Pages
         */
+
         .state('alcohol', {
             url: '/alcohol',
             views: {
@@ -222,8 +223,55 @@ ohApp.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        /*
+        Bonds Pages
+        */
 
+        .state('sBond', {
+            url: '/sBond',
+            views: {
+                '': { templateUrl: root + '/views/sBond.html' },
+            }
+        })
 
+        .state('pBond', {
+            url: '/pBond',
+            views: {
+                '': { templateUrl: root + '/views/pBond.html' },
+            }
+        })
+
+        .state('dBond', {
+            url: '/dBond',
+            views: {
+                '': { templateUrl: root + '/views/dBond.html' },
+            }
+        })
+
+        /*
+        Orbitals Pages
+        */
+
+        .state('sOrbital', {
+            url: '/sOrbital',
+            views: {
+                '': { templateUrl: root + '/views/sOrbital.html' },
+            }
+        })
+
+        .state('pOrbital', {
+            url: '/pOrbital',
+            views: {
+                '': { templateUrl: root + '/views/pOrbital.html' },
+            }
+        })
+
+        .state('dOrbital', {
+            url: '/dOrbital',
+            views: {
+                '': { templateUrl: root + '/views/dOrbital.html' },
+            }
+        })
 
 
 
