@@ -3,10 +3,10 @@ ohApp.directive("searchGroupDirective", function() {
     return {
         restrict : 'E',
         scope: {
-          group: "="
+          item: "="
         },
         link: function(scope){
-          var groupName = (scope.$parent.group.name);
+          var groupName = (scope.$parent.item.name);
           var templateToUse = 'js/templates/prerendered/error.html';
           if (groupName) {
             templateToUse = 'js/templates/prerendered/pr-' + groupName + '.html';
