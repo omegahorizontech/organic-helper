@@ -17,129 +17,142 @@ ohApp.directive("functionalGroupDirective", function() {
           scope.$watch('name', function(nV, oV) {
             if(nV){
 
-              var width = 460,
-                  height = 500;
+              function drawGraph(w, h, scale) {
 
-              var radius = d3.scale.sqrt()
-                  .range([0, 6]);
+                var width = w,
+                    height = h;
 
-              var svg = d3.select(".viz").append("svg")
-                  .style("border", "1px solid black")
-                  .attr("width", width)
-                  .attr("height", height);
+                var radius = d3.scale.sqrt()
+                    .range([0, 6]);
 
-              svg.append("text")
-                  .attr("x", width - 35 + 'px')
-                  .attr("y", '60px')
-                  .style("font-weight", 900)
-                  .attr("text-anchor", "end")
-                  .text(attrs.atomicname);
+                var svg = d3.select(".viz").append("svg")
+                    .style("border", "1px solid black")
+                    .attr("width", width)
+                    .attr("height", height);
 
-              svg.append("text")
-                  .attr("x", width - 35 + 'px')
-                  .attr("y", '40px')
-                  .attr("text-anchor", "end")
-                  .text('The formula is usually written');
+                svg.append("text")
+                    .attr("x", width - 35 + 'px')
+                    .attr("y", '60px')
+                    .style("font-weight", 900)
+                    .attr("text-anchor", "end")
+                    .text(attrs.atomicname);
 
-              var force = d3.layout.force()
-                  .size([width, height])
-                  .charge(-400)
-                  .linkDistance(function(d) { return radius(d.source.size) + radius(d.target.size) + 20; });
+                svg.append("text")
+                    .attr("x", width - 35 + 'px')
+                    .attr("y", '40px')
+                    .attr("text-anchor", "end")
+                    .text('The formula is usually written');
 
-              var jsonPath = "json/" + attrs.name + ".json";
-              console.log('loading---->  ' + jsonPath);
+                var force = d3.layout.force()
+                    .size([width, height])
+                    .charge(-400 * scale * scale * scale)
+                    .linkDistance(function(d) { return radius(d.source.size) + radius(d.target.size) + 20; });
 
-              function findColor(data) {
-                var color = ''
-                switch (data.atom) {
-                  case 'H':
-                      color = 'white';
-                    break;
-                  case 'O':
-                      color = 'red';
-                    break;
-                  case 'Cl':
-                      color = 'green';
-                    break;
-                  case 'N':
-                      color = 'dodgerBlue';
-                    break;
-                  case 'C':
-                      color = 'grey';
-                    break;
-                  case 'S':
-                      color = 'yellow';
-                    break;
-                  case 'P':
-                      color = 'orange';
-                    break;
-                  case "R":
-                      color = 'maroon';
-                    break;
-                  case "R'":
-                      color = 'maroon';
-                    break;
-                  case "R''":
-                      color = 'maroon';
-                    break;
-                  case "R'''":
-                      color = 'maroon';
-                    break;
-                  case "R''''":
-                      color = 'maroon';
-                    break;
-                  default:
-                      color = 'black';
-                    break;
+                var jsonPath = "json/" + attrs.name + ".json";
+                console.log('loading---->  ' + jsonPath);
+
+                function findColor(data) {
+                  var color = ''
+                  switch (data.atom) {
+                    case 'H':
+                        color = 'white';
+                      break;
+                    case 'O':
+                        color = 'red';
+                      break;
+                    case 'Cl':
+                        color = 'green';
+                      break;
+                    case 'N':
+                        color = 'dodgerBlue';
+                      break;
+                    case 'C':
+                        color = 'grey';
+                      break;
+                    case 'S':
+                        color = 'yellow';
+                      break;
+                    case 'P':
+                        color = 'orange';
+                      break;
+                    case "R":
+                        color = 'maroon';
+                      break;
+                    case "R'":
+                        color = 'maroon';
+                      break;
+                    case "R''":
+                        color = 'maroon';
+                      break;
+                    case "R'''":
+                        color = 'maroon';
+                      break;
+                    case "R''''":
+                        color = 'maroon';
+                      break;
+                    case "F":
+                        color = 'lightGreen';
+                      break;
+                    default:
+                        color = 'black';
+                      break;
+                  }
+                  return color
                 }
-                return color
+
+                d3.json(jsonPath, function(error, graph) {
+                  if (error) throw error;
+
+                  force
+                      .nodes(graph.nodes)
+                      .links(graph.links)
+                      .on("tick", tick)
+                      .start();
+
+                  var link = svg.selectAll(".link")
+                      .data(graph.links)
+                    .enter().append("g")
+                      .attr("class", "link");
+
+                  link.append("line")
+                      .style("stroke-width", function(d) { return (d.bond * 2 - 1) * 2 + "px"; });
+
+                  link.filter(function(d) { return d.bond > 1; }).append("line")
+                      .attr("class", "separator");
+
+                  var node = svg.selectAll(".node")
+                      .data(graph.nodes)
+                    .enter().append("g")
+                      .attr("class", "node")
+                      .call(force.drag);
+
+                  node.append("circle")
+                      .attr("r", function(d) { return radius(d.size); })
+                      .style("fill", function(d) { return findColor(d); });
+
+                  node.append("text")
+                      .attr("dy", ".35em")
+                      .attr("text-anchor", "middle")
+                      .text(function(d) { return d.atom; });
+
+                  function tick() {
+                    link.selectAll("line")
+                        .attr("x1", function(d) { return d.source.x; })
+                        .attr("y1", function(d) { return d.source.y; })
+                        .attr("x2", function(d) { return d.target.x; })
+                        .attr("y2", function(d) { return d.target.y; });
+
+                    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+                  }
+                });
+
+              } // End drawGraph function
+
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                drawGraph(260, 300, .7)
+              } else {
+                drawGraph(460, 500, 1)
               }
-
-              d3.json(jsonPath, function(error, graph) {
-                if (error) throw error;
-
-                force
-                    .nodes(graph.nodes)
-                    .links(graph.links)
-                    .on("tick", tick)
-                    .start();
-
-                var link = svg.selectAll(".link")
-                    .data(graph.links)
-                  .enter().append("g")
-                    .attr("class", "link");
-
-                link.append("line")
-                    .style("stroke-width", function(d) { return (d.bond * 2 - 1) * 2 + "px"; });
-
-                link.filter(function(d) { return d.bond > 1; }).append("line")
-                    .attr("class", "separator");
-
-                var node = svg.selectAll(".node")
-                    .data(graph.nodes)
-                  .enter().append("g")
-                    .attr("class", "node")
-                    .call(force.drag);
-
-                node.append("circle")
-                    .attr("r", function(d) { return radius(d.size); })
-                    .style("fill", function(d) { return findColor(d); });
-
-                node.append("text")
-                    .attr("dy", ".35em")
-                    .attr("text-anchor", "middle")
-                    .text(function(d) { return d.atom; });
-
-                function tick() {
-                  link.selectAll("line")
-                      .attr("x1", function(d) { return d.source.x; })
-                      .attr("y1", function(d) { return d.source.y; })
-                      .attr("x2", function(d) { return d.target.x; })
-                      .attr("y2", function(d) { return d.target.y; });
-
-                  node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-                }
-              });
 
             }
           })
