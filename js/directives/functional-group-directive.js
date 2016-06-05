@@ -90,6 +90,9 @@ ohApp.directive("functionalGroupDirective", function() {
                     case "R''''":
                         color = 'maroon';
                       break;
+                    case "F":
+                        color = 'lightGreen';
+                      break;
                     default:
                         color = 'black';
                       break;
@@ -150,7 +153,7 @@ ohApp.directive("functionalGroupDirective", function() {
               } else {
                 drawGraph(460, 500, 1)
               }
-              
+
             }
           })
 
