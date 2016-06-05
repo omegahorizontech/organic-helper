@@ -22,15 +22,15 @@ ohApp.controller('searchController', ['$scope', '$http',
       ];
       var orbitals = [
         {
-          "name": 'sOrbital', "displayname": 's - Orbital',
+          "name": 'sOrbital', "displayname": 'S - Orbital',
           "meta": 's s Orbital sOrbital sigma',
         },
         {
-          "name": 'pOrbital', "displayname": 'p - Orbital',
+          "name": 'pOrbital', "displayname": 'P - Orbital',
           "meta": 'p p Orbital pOrbital pi',
         },
         {
-          "name": 'dOrbital', "displayname": 'd - Orbital',
+          "name": 'dOrbital', "displayname": 'D - Orbital',
           "meta": 'd d Orbital dOrbital delta',
         }
       ];
